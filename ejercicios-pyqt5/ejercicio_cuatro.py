@@ -2,13 +2,13 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5 import uic
 
 '''
-Realizar un programa que calcule el pedido de un lomito con los preciosindicados
+Realizar un programa que calcule el pedido de un lomito con los precios indicados
 '''
 
 class MiVentana(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("TP2/ejercicio_cuatro.ui", self)
+        uic.loadUi("ejercicios-pyqt5/ejercicio_cuatro.ui", self)
         self.calcular.clicked.connect(self.calcularPrecio)
 
     def calcularPrecio(self):

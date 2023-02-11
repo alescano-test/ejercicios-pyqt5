@@ -12,7 +12,7 @@ cargado separado por coma.
 class MiVentana(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("TP2/ejercicio_tres.ui", self)
+        uic.loadUi("ejercicios-pyqt5/ejercicio_tres.ui", self)
         self.mostrar.clicked.connect(self.mostrarNombre)
     
     def mostrarNombre(self):
