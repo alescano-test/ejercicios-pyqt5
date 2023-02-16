@@ -9,7 +9,7 @@ cambie el texto de la etiqueta a “Chau mundo!”
 class MiVentana(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("ejercicios-pyqt5/ejercicio_uno.ui", self)
+        uic.loadUi("ejercicios-pyqt5/interfaces/ejercicio_uno.ui", self)
         self.boton.clicked.connect(self.cambiarSaludo)
     
     def cambiarSaludo(self):

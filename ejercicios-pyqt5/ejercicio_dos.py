@@ -10,7 +10,7 @@ Repetir la secuencia siguiendo el sentido de las agujas del reloj.
 class MiVentana(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("ejercicios-pyqt5/ejercicio_dos.ui", self)
+        uic.loadUi("ejercicios-pyqt5/interfaces/ejercicio_dos.ui", self)
         self.arriba.clicked.connect(self.clickArriba)
         self.derecha.clicked.connect(self.clickDerecha)
         self.abajo.clicked.connect(self.clickAbajo)

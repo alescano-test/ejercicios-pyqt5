@@ -9,7 +9,7 @@ dialogo de mensaje especificando el titulo, mensaje, icono y botones.
 class MiVentana(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("ejercicios-pyqt5/ejercicio_seis.ui", self)
+        uic.loadUi("ejercicios-pyqt5/interfaces/ejercicio_seis.ui", self)
         self.mostrar_mensaje.clicked.connect(self.mostrarMensaje)
 
     def mostrarMensaje(self):

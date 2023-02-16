@@ -8,7 +8,7 @@ Realizar un programa que permita realizar una conversión de unidades de tempera
 class MiVentana(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("ejercicios-pyqt5/ejercicio_cinco.ui", self)
+        uic.loadUi("ejercicios-pyqt5/interfaces/ejercicio_cinco.ui", self)
         self.calcular.clicked.connect(self.calcular_temperatura)
 
     

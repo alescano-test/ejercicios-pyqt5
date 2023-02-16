@@ -10,7 +10,7 @@ Para las acciones de quitar y quitar todos emplear QMessageBox para preguntar si
 class MiVentana(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("ejercicios-pyqt5/ejercicio_siete.ui", self)
+        uic.loadUi("ejercicios-pyqt5/interfaces/ejercicio_siete.ui", self)
         self.btnAgregar.clicked.connect(self.al_clic_agregar)
         self.btnEditar.clicked.connect(self.al_clic_editar)
         self.btnQuitar.clicked.connect(self.al_clic_quitar)
