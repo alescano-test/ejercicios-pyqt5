@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>323</height>
+    <width>674</width>
+    <height>215</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QListWidget" name="listaIzquierda">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>60</y>
+      <x>10</x>
+      <y>10</y>
       <width>271</width>
       <height>192</height>
      </rect>
@@ -42,8 +42,8 @@
    <widget class="QPushButton" name="moverIzquierda">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>180</y>
+      <x>300</x>
+      <y>130</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -55,8 +55,8 @@
    <widget class="QPushButton" name="moverDerecha">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>100</y>
+      <x>300</x>
+      <y>50</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -68,8 +68,8 @@
    <widget class="QListWidget" name="listaDerecha">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>60</y>
+      <x>390</x>
+      <y>10</y>
       <width>271</width>
       <height>192</height>
      </rect>

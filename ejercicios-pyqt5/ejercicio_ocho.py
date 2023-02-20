@@ -5,37 +5,34 @@ class MiVentana(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("ejercicios-pyqt5/interfaces/ejercicio_ocho.ui", self)
-        self.moverIzquierda.clicked.connect(self.mover_izquierda)
         self.moverDerecha.clicked.connect(self.mover_derecha)
-    
-
-    def mover_izquierda(self):
-        cant_items = self.listaDerecha.count()
-        item = self.listaDerecha.currentItem()
-        fila = self.listaDerecha.currentRow()
-        self.listaIzquierda.insertItem(0, item.text())
-        self.listaDerecha.takeItem(fila)
-        if cant_items <= 0:
-            self.moverIzquierda.setEnabled(False)
-            self.moverDerecha.setEnabled(True)
-        else:
-            self.moverIzquierda.setEnabled(False)
-            self.moverDerecha.setEnabled(True)
+        self.moverIzquierda.clicked.connect(self.mover_izquierda)
 
 
     def mover_derecha(self):
-        cant_items = self.listaIzquierda.count()
-        item = self.listaIzquierda.currentItem()
         fila = self.listaIzquierda.currentRow()
-        self.moverDerecha.setEnabled(False)
-        self.listaDerecha.insertItem(0, item.text())
-        self.listaIzquierda.takeItem(fila)  
-        if cant_items <= 0:
-            self.moverIzquierda.setEnabled(True)
+        itemActual = self.listaIzquierda.currentItem()
+        self.listaDerecha.insertItem(0, itemActual.text())
+        self.listaIzquierda.takeItem(fila)
+        if self.listaIzquierda.count() < 1:
             self.moverDerecha.setEnabled(False)
+            self.moverIzquierda.setEnabled(True)
         else:
+            self.moverDerecha.setEnabled(True)
             self.moverIzquierda.setEnabled(True)
-            self.moverDerecha.setEnabled(False)
+
+    def mover_izquierda(self):
+        fila = self.listaDerecha.currentRow()
+        itemActual = self.listaDerecha.currentItem()
+        self.listaIzquierda.insertItem(0, itemActual.text())
+        self.listaDerecha.takeItem(fila)
+
+        if self.listaDerecha.count() < 1:
+            self.moverDerecha.setEnabled(True)
+            self.moverIzquierda.setEnabled(False)
+        else:
+            self.moverDerecha.setEnabled(True)
+            self.moverIzquierda.setEnabled(True)
 
 app = QApplication([])
 win = MiVentana()
