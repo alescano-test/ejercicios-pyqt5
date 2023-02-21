@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem
+from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox, QInputDialog
 from PyQt5 import uic
 
 '''
@@ -22,9 +22,30 @@ class MiVentana(QMainWindow):
 
     def editar_persona(self):
         fila = self.tablaDatos.currentRow()
-        self.nombre.setText(self.tablaDatos.item(fila ,0).text())
-        self.apellido.setText(self.tablaDatos.item(fila ,1).text())
-        self.email.setText(self.tablaDatos.item(fila ,2).text())
+        colum = self.tablaDatos.currentColumn()
+        if colum == 0:
+            texto, ok = QInputDialog.getText(self, "Editar", "Nuevo nombre")
+            if ok and texto != '':
+                self.tablaDatos.setItem(fila, colum, QTableWidgetItem(texto))
+            else:
+                msg = QMessageBox(QMessageBox.Warning, "Error", "Tienes que completar el nombre")
+                msg.exec()
+        if colum == 1:
+            texto, ok = QInputDialog.getText(self, "Editar", "Nuevo apellido")
+            if ok and texto != '':
+                self.tablaDatos.setItem(fila, colum, QTableWidgetItem(texto))
+            else:
+                msg = QMessageBox(QMessageBox.Warning, "Error", "Tienes que completar el nombre")
+                msg.exec()
+        if colum == 2:
+            texto, ok = QInputDialog.getText(self, "Editar", "Nuevo email")
+            if ok and texto != '':
+                self.tablaDatos.setItem(fila, colum, QTableWidgetItem(texto))
+            else:
+                msg = QMessageBox(QMessageBox.Warning, "Error", "Tienes que completar el nombre")
+                msg.exec()
+
+
         #self.tablaDatos.item()
 
     def eliminar_persona(self):
