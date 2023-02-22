@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox
 from PyQt5 import uic
 
 '''
@@ -13,16 +13,21 @@ class MiVentana(QMainWindow):
 
     
     def calcular_temperatura(self):
+        lenDato = len(self.input_temp.text())
         resultado = 0
-        if self.centigrados_kelvin.isChecked():
-            resultado = f"(K°) {float(self.input_temp.text()) + 273.15}"
-        if self.kelvin_centigrados.isChecked():
-            resultado = f"(C°) {float(self.input_temp.text()) - 273.15}"
-        if self.centigrados_fahrenheit.isChecked():
-            resultado = f"(F°) {float(self.input_temp.text())  * 1.8 + 32}"
-        if self.fahrenheit_centigrados.isChecked():
-            resultado = f"(C°) {float(self.input_temp.text()) - 32 / 1.8}"
-        
+        if lenDato == 0:
+            msg = QMessageBox(QMessageBox.Warning, "Error", "El valor es requerido.")
+            msg.exec()
+        if lenDato >= 1:
+            if self.centigrados_kelvin.isChecked():
+                resultado = f"(K°) {float(self.input_temp.text()) + 273.15}"
+            if self.kelvin_centigrados.isChecked():
+                resultado = f"(C°) {float(self.input_temp.text()) - 273.15}"
+            if self.centigrados_fahrenheit.isChecked():
+                resultado = f"(F°) {float(self.input_temp.text())  * 1.8 + 32}"
+            if self.fahrenheit_centigrados.isChecked():
+                resultado = f"(C°) {float(self.input_temp.text()) - 32 / 1.8}"
+            
         self.conversion.setText(str(resultado))
 
 app = QApplication([])

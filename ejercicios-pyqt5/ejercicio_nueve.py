@@ -12,7 +12,7 @@ class MiVentana(QMainWindow):
         self.btnAgregar.clicked.connect(self.agregar_persona)
         self.btnEditar.clicked.connect(self.editar_persona)
         self.btnEliminar.clicked.connect(self.eliminar_persona)
-#!-----------------------------------------------------------------------------------------------------
+
     def agregar_persona(self):
             if len(self.nombre.text()) == 0:
                 msg = QMessageBox(QMessageBox.Warning, "Error", "Tienes que completar el nombre")

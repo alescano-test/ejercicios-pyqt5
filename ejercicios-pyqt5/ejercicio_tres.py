@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox
 from PyQt5 import uic
 
 '''
@@ -12,9 +12,19 @@ class MiVentana(QMainWindow):
         super().__init__()
         uic.loadUi("ejercicios-pyqt5/interfaces/ejercicio_tres.ui", self)
         self.mostrar.clicked.connect(self.mostrarNombre)
+
     
     def mostrarNombre(self):
-        self.nom_compl.setText(f"{self.nombre.text()}, {self.apellido.text()}")
+        lenNombre = self.nombre.text()
+        lenApellido = self.apellido.text()
+        if len(lenNombre) == 0:
+            msg = QMessageBox(QMessageBox.Warning, "Error", "El nombre es requerido.")
+            msg.exec()
+        if len(lenApellido) == 0:
+            msg = QMessageBox(QMessageBox.Warning, "Error", "El apellido es requerido.")
+            msg.exec()
+        if len(lenApellido) and len(lenApellido) >= 1:
+            self.nom_compl.setText(f"{lenNombre}, {lenApellido}")
 
 app = QApplication([])
 win = MiVentana()
