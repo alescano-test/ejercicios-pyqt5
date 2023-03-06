@@ -26,8 +26,8 @@ class MiVentana(QMainWindow):
             if self.centigrados_fahrenheit.isChecked():
                 resultado = f"(F°) {float(self.input_temp.text())  * 1.8 + 32}"
             if self.fahrenheit_centigrados.isChecked():
-                resultado = f"(C°) {float(self.input_temp.text()) - 32 / 1.8}"
-            
+                resultado = f"(C°) {round(float(self.input_temp.text()),2) - 32 / 1.8}"
+
         self.conversion.setText(str(resultado))
 
 app = QApplication([])
