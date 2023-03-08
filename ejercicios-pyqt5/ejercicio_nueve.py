@@ -29,6 +29,7 @@ class MiVentana(QMainWindow):
                 self.tablaDatos.setItem(0, 1, QTableWidgetItem(self.apellido.text()))
                 self.tablaDatos.setItem(0, 2, QTableWidgetItem(self.email.text()))
                 self.borrar_entradas()
+
 #!-----------------------------------------------------------------------------------------------------
     def editar_persona(self):
         fila = self.tablaDatos.currentRow()
@@ -58,6 +59,7 @@ class MiVentana(QMainWindow):
             else:
                 msg = QMessageBox(QMessageBox.Warning, "Error", "Tienes que completar el nombre")
                 msg.exec()
+
 #!-----------------------------------------------------------------------------------------------------
     def eliminar_persona(self):
         msg = QMessageBox(QMessageBox.Warning, "Eliminar", "Seguro quieres eliminarlo?", QMessageBox.Yes | QMessageBox.No)
@@ -67,6 +69,7 @@ class MiVentana(QMainWindow):
             self.tablaDatos.removeRow(fila)
         if resultado == QMessageBox.No:
             pass
+
 #!-----------------------------------------------------------------------------------------------------
     def borrar_entradas(self):
         self.nombre.clear()
