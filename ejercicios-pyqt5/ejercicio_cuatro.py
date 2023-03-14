@@ -5,6 +5,7 @@ from PyQt5 import uic
 Realizar un programa que calcule el pedido de un lomito con los precios indicados
 '''
 
+
 class MiVentana(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -27,9 +28,10 @@ class MiVentana(QMainWindow):
             resultado += 250
         if self.delivery.isChecked():
             resultado += 100
-        
+
         self.precio.setText(f"${resultado}")
-    
+
+
 app = QApplication([])
 win = MiVentana()
 win.show()

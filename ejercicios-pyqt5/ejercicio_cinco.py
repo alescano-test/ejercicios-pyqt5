@@ -5,18 +5,19 @@ from PyQt5 import uic
 Realizar un programa que permita realizar una conversión de unidades de temperatura.
 '''
 
+
 class MiVentana(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("ejercicios-pyqt5/interfaces/ejercicio_cinco.ui", self)
         self.calcular.clicked.connect(self.calcular_temperatura)
 
-    
     def calcular_temperatura(self):
         lenDato = len(self.input_temp.text())
         resultado = 0
         if lenDato == 0:
-            msg = QMessageBox(QMessageBox.Warning, "Error", "El valor es requerido.")
+            msg = QMessageBox(QMessageBox.Warning, "Error",
+                              "El valor es requerido.")
             msg.exec()
         if lenDato >= 1:
             if self.centigrados_kelvin.isChecked():
@@ -29,6 +30,7 @@ class MiVentana(QMainWindow):
                 resultado = f"(C°) {round(float(self.input_temp.text()),2) - 32 / 1.8}"
 
         self.conversion.setText(str(resultado))
+
 
 app = QApplication([])
 win = MiVentana()

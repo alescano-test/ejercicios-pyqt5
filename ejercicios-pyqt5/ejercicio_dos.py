@@ -7,6 +7,7 @@ del botón ‘arriba’. Luego al hacer clic en el botón ‘arriba’ se habili
 Repetir la secuencia siguiendo el sentido de las agujas del reloj.
 '''
 
+
 class MiVentana(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -17,25 +18,28 @@ class MiVentana(QMainWindow):
         self.izquierda.clicked.connect(self.clickIzquierda)
 
     def clickArriba(self):
-            self.arriba.setEnabled(False)
-            self.derecha.setEnabled(True)
-            self.abajo.setEnabled(False)
-            self.izquierda.setEnabled(False)
+        self.arriba.setEnabled(False)
+        self.derecha.setEnabled(True)
+        self.abajo.setEnabled(False)
+        self.izquierda.setEnabled(False)
+
     def clickDerecha(self):
-            self.arriba.setEnabled(False)
-            self.derecha.setEnabled(False)
-            self.abajo.setEnabled(True)
-            self.izquierda.setEnabled(False)
+        self.arriba.setEnabled(False)
+        self.derecha.setEnabled(False)
+        self.abajo.setEnabled(True)
+        self.izquierda.setEnabled(False)
+
     def clickAbajo(self):
-            self.arriba.setEnabled(False)
-            self.derecha.setEnabled(False)
-            self.abajo.setEnabled(False)
-            self.izquierda.setEnabled(True)
+        self.arriba.setEnabled(False)
+        self.derecha.setEnabled(False)
+        self.abajo.setEnabled(False)
+        self.izquierda.setEnabled(True)
+
     def clickIzquierda(self):
-            self.arriba.setEnabled(True)
-            self.derecha.setEnabled(False)
-            self.abajo.setEnabled(False)
-            self.izquierda.setEnabled(False)
+        self.arriba.setEnabled(True)
+        self.derecha.setEnabled(False)
+        self.abajo.setEnabled(False)
+        self.izquierda.setEnabled(False)
 
 
 app = QApplication([])

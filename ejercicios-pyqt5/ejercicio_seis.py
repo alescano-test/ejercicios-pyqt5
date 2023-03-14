@@ -6,6 +6,7 @@ Realizar un programa que permita generar un
 dialogo de mensaje especificando el titulo, mensaje, icono y botones.
 '''
 
+
 class MiVentana(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -27,7 +28,7 @@ class MiVentana(QMainWindow):
             mensaje.setIcon(QMessageBox.Warning)
         if self.btn_critico.isChecked():
             mensaje.setIcon(QMessageBox.Critical)
-        
+
         if self.ch_si.isChecked() == True:
             botones = botones | QMessageBox.Yes
         if self.ch_abrir.isChecked() == True:
@@ -50,9 +51,10 @@ class MiVentana(QMainWindow):
             botones = botones | QMessageBox.Ok
         if self.ch_guardar_todo.isChecked() == True:
             botones = botones | QMessageBox.SaveAll
-        
+
         mensaje.setStandardButtons(botones)
         mensaje.exec()
+
 
 app = QApplication([])
 win = MiVentana()

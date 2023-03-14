@@ -6,6 +6,7 @@ Desarrollar un programa que al hacer clic en el botón
 cambie el texto de la etiqueta a “Chau mundo!”
 '''
 
+
 class MiVentana(QMainWindow):
     def __init__(self):
         super().__init__()
